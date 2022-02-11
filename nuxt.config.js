@@ -32,12 +32,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    '@nuxtjs/auth',
-    'vue-toastification/nuxt',
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth', 'vue-toastification/nuxt'],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -67,13 +62,6 @@ export default {
     redirect: {
       callback: '/login',
       home: '/',
-    },
-  },
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en',
     },
   },
 
