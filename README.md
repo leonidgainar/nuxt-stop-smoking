@@ -1,5 +1,7 @@
 # stop-smoking
 
+## Live demo [here](https://nuxt-stop-smoking.herokuapp.com/)
+
 ## Build Setup
 
 ```bash
