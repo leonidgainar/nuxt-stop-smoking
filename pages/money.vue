@@ -13,11 +13,10 @@
           <validation-provider
             v-slot="{ errors }"
             name="amount"
-            rules="required|min_value:1"
+            rules="required|min_value:1|max_value:9999"
           >
             <v-text-field
               v-model="amount"
-              type="number"
               :error-messages="errors"
               label="Amount of money spent"
               color="blue-grey"

@@ -157,7 +157,7 @@ export default {
     async getMoneyAmountTotal() {
       await this.$axios.get('/api/money').then((response) => {
         response.data.forEach(({ amount }) => {
-          this.moneyAmountTotal += parseInt(amount)
+          this.moneyAmountTotal += parseFloat(amount)
         })
       })
     },

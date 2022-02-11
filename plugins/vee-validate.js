@@ -7,6 +7,7 @@ import {
   email,
   min_value,
   max_value,
+  numeric,
 } from 'vee-validate/dist/rules'
 
 extend('required', {
@@ -40,3 +41,5 @@ extend('max_value', {
   ...max_value,
   message: 'Must be less than {max}',
 })
+
+extend('numeric', numeric)

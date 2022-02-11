@@ -16,11 +16,10 @@
           <validation-provider
             v-slot="{ errors }"
             name="price"
-            rules="required|min_value:1|max_value:99.99"
+            rules="required|min_value:1|max_value:9999"
           >
             <v-text-field
               v-model="price"
-              type="number"
               class="px-4"
               label="Price per pack"
               :error-messages="errors"

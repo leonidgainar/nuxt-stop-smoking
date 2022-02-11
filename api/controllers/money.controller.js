@@ -9,7 +9,7 @@ async function addOrUpdateMoneyAmount(date, amount, userId) {
       throw error
     })
 
-  const totalAmount = parseInt(record?.amount || 0) + parseInt(amount)
+  const totalAmount = parseFloat(record?.amount || 0) + parseFloat(amount)
 
   return await Money.findOneAndUpdate(
     { userId, date },
