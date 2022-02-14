@@ -149,6 +149,7 @@ export default {
       interval.forEach(async (day) => {
         day = day.toISOString().substring(0, 10)
         await this.$axios.get(`/api/money/${day}`).then((response) => {
+          this.moneyCurrentWeek = 0
           this.moneyCurrentWeek += response.data.amount || 0
         })
       })
@@ -156,6 +157,7 @@ export default {
 
     async getMoneyAmountTotal() {
       await this.$axios.get('/api/money').then((response) => {
+        this.moneyAmountTotal = 0
         response.data.forEach(({ amount }) => {
           this.moneyAmountTotal += parseFloat(amount)
         })
@@ -178,9 +180,6 @@ export default {
     },
 
     getMoneyStats() {
-      this.moneyCurrentWeek = 0
-      this.moneyAmountTotal = 0
-
       this.getMoneyAmountForToday()
       this.getMoneyAmountForCurrentWeek(this.currentWeek)
       this.getMoneyAmountTotal()
@@ -196,6 +195,7 @@ export default {
       interval.forEach(async (day) => {
         day = day.toISOString().substring(0, 10)
         await this.$axios.get(`/api/cigarette/${day}`).then((response) => {
+          this.cigarettesCurrentWeek = 0
           this.cigarettesCurrentWeek += response.data.amount || 0
         })
       })
@@ -203,6 +203,7 @@ export default {
 
     async getCigarettesAmountTotal() {
       await this.$axios.get('/api/cigarette').then((response) => {
+        this.cigarettesAmountTotal = 0
         response.data.forEach(({ amount }) => {
           this.cigarettesAmountTotal += parseInt(amount)
         })
@@ -210,9 +211,6 @@ export default {
     },
 
     getCigarettesStats() {
-      this.cigarettesCurrentWeek = 0
-      this.cigarettesAmountTotal = 0
-
       this.getCigarettesAmountForToday()
       this.getCigarettesAmountForCurrentWeek(this.currentWeek)
       this.getCigarettesAmountTotal()
